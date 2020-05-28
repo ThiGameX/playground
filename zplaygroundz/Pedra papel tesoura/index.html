@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pedra Papel Tesoura</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<header>
+		Pedra Papel Tesoura
+	</header>
+
+	<div class="scoreboard">
+		<div class="pessoa-nome">Você</div>
+		<div class="comp-nome">Comp</div>
+
+		<h1 id="result-show">0:0</h1>
+
+	</div>
+
+	<h1 id="match-result">--------------------------</h1>
+
+	<div class="escolhas">
+		<img class="pedra escolha" src="pedra.png" onclick="pedra()">
+		<img class="papel escolha" src="papel.png" onclick="papel()">
+		<img class="tesoura escolha" src="tesoura.png" onclick="tesoura()">
+	</div>
+
+	<h1 class="escolha-bot-h1">Escolha do bot:</h1>
+	<div id="escolha-bot">
+		
+	</div>
+
+	<script>
+		
+		botPoint = 0
+		playerPoint = 0
+
+		function pedra(){
+			botChoice = Math.floor((Math.random() * 9) + 1);
+			console.log(botChoice)
+			if((botChoice>0) && (botChoice <= 3)){
+				botChoose = "pedra"
+			}
+			if((botChoice>3) && (botChoice <= 6)){
+				botChoose = "papel"
+			}
+			if((botChoice>6) && (botChoice <= 9)){
+				botChoose = "tesoura"
+			}
+
+			if(botChoose == "tesoura"){
+				document.getElementById("match-result").innerHTML = `Pedra ganha de tesoura, você ganhou!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='tesoura.png'>"
+				playerPoint = playerPoint + 1
+			}
+			if (botChoose == "papel"){
+				document.getElementById("match-result").innerHTML = `Pedra perde para papel, você perdeu!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='papel.png'>"
+				botPoint = botPoint + 1
+			}
+			if (botChoose == "pedra"){
+				document.getElementById("match-result").innerHTML = `Pedra empata com pedra, empate!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='pedra.png'>"
+				botPoint = botPoint + 1
+				playerPoint = playerPoint + 1
+			}
+			document.getElementById("result-show").innerHTML = `${playerPoint}:${botPoint}`
+
+			if (botPoint > 4) {
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Você Perdeu!"
+				botPoint = 0
+				playerPoint = 0
+			}
+			if (playerPoint > 4) {
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Você ganhou!"
+				botPoint = 0
+				playerPoint = 0
+			}
+			if((botPoint == 4) && (playerPoint == 4)){
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Empate!"
+				botPoint = 0
+				playerPoint = 0
+			}
+		}
+
+
+
+
+		function papel(){
+			botChoice = Math.floor((Math.random() * 9) + 1);
+			console.log(botChoice)
+			if((botChoice>0) && (botChoice <= 3)){
+				botChoose = "pedra"
+			}
+			if((botChoice>3) && (botChoice <= 6)){
+				botChoose = "papel"
+			}
+			if((botChoice>6) && (botChoice <= 9)){
+				botChoose = "tesoura"
+			}
+
+			if(botChoose == "tesoura"){
+				document.getElementById("match-result").innerHTML = `Tesoura ganha de papel, você perdeu!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='tesoura.png'>"
+				botPoint = botPoint + 1
+			}
+			if (botChoose == "papel"){
+				document.getElementById("match-result").innerHTML = `Papel empata com papel! Empate!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='papel.png'>"
+				botPoint = botPoint + 1
+				playerPoint = playerPoint + 1
+			}
+			if (botChoose == "pedra"){
+				document.getElementById("match-result").innerHTML = `Papel ganha de perda, você ganhou!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='pedra.png'>"
+				playerPoint = playerPoint + 1
+			}
+			document.getElementById("result-show").innerHTML = `${playerPoint}:${botPoint}`
+
+			if (botPoint > 4) {
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Você Perdeu!"
+				botPoint = 0
+				playerPoint = 0
+			}
+			if (playerPoint > 4) {
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Você ganhou!"
+				botPoint = 0
+				playerPoint = 0
+			}
+			if((botPoint == 4) && (playerPoint == 4)){
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Empate!"
+				botPoint = 0
+				playerPoint = 0
+			}
+		}
+
+		function tesoura(){
+			botChoice = Math.floor((Math.random() * 9) + 1);
+			console.log(botChoice)
+			if((botChoice>0) && (botChoice <= 3)){
+				botChoose = "pedra"
+			}
+			if((botChoice>3) && (botChoice <= 6)){
+				botChoose = "papel"
+			}
+			if((botChoice>6) && (botChoice <= 9)){
+				botChoose = "tesoura"
+			}
+
+			if(botChoose == "tesoura"){
+				document.getElementById("match-result").innerHTML = `Tesoura empata com tesoura! Empate!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='tesoura.png'>"
+				playerPoint = playerPoint + 1
+				botPoint = botPoint + 1
+			}
+			if (botChoose == "papel"){
+				document.getElementById("match-result").innerHTML = `Tesoura ganha de papel! Você ganhou!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='papel.png'>"
+				playerPoint = playerPoint + 1
+			}
+			if (botChoose == "pedra"){
+				document.getElementById("match-result").innerHTML = `Tesoura perde pra pedra! Você perdeu!`
+				document.getElementById("escolha-bot").innerHTML = "<img src='pedra.png'>"
+				botPoint = botPoint + 1
+			}
+			document.getElementById("result-show").innerHTML = `${playerPoint}:${botPoint}`
+
+			if (botPoint > 4) {
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Você Perdeu!"
+				botPoint = 0
+				playerPoint = 0
+			}
+			if (playerPoint > 4) {
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Você ganhou!"
+				botPoint = 0
+				playerPoint = 0
+			}
+			if((botPoint == 4) && (playerPoint == 4)){
+				document.getElementById("match-result").innerHTML = "O jogo acabou! Empate!"
+				botPoint = 0
+				playerPoint = 0
+			}
+		}
+
+	</script>
+
+</body>
+</html>

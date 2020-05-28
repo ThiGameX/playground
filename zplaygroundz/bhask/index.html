@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>	  
+		<title> Projeto Livros </title>
+		<link type="text/css" rel="stylesheet" href="css/estilo.css"/>	
+	</head>
+	<body>
+      	
+		<input type="number" id="n1" placeholder="valor de A">
+		<input type="number" id="n2" placeholder="valor de B">
+		<input type="number" id="n3" placeholder="valor de C">
+
+		<br><button type="submit" onclick="calc()">Enviar</button>
+
+		<h2 id="result"></h2>
+
+		<script type="text/javascript">
+			
+			const resultTxt = document.querySelector("#result")
+			const inputA = document.querySelector("#n1")
+			const inputB = document.querySelector("#n2")
+			const inputC = document.querySelector("#n3")
+			var a, c, b, x1, x2
+
+			function calc(){
+				a = inputA.value
+				b = inputB.value
+				c = inputC.value
+
+				delta = (b**2) - 4 * a * c
+
+				if (delta > 0) {
+					x1 = (-b + Math.sqrt(delta))/ 2*a
+					x2 = (-b - Math.sqrt(delta))/ 2*a
+
+					resultTxt.innerHTML = "x' = " + x1
+					resultTxt.innerHTML += '<br> x" = ' + x2
+				}else{
+					resultTxt.innerHTML = "Não pertence aos numeros reais"
+				}
+
+				
+			}
+
+		</script>
+	
+
+	</body>
+ </html>

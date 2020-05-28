@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+	<html>
+		
+		<head>
+			
+			<title>Box</title>
+				
+			<link rel="stylesheet" href="style.css">
+
+			<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+			<script>
+				document.getElementById("bgCor").value = "blue"
+				bordaCor = document.getElementById("bordaCor").value
+
+			</script>
+		
+		</head>
+		
+		<body>
+
+			<div id="box"></div>
+
+			<div class="controle">
+
+			<button onmousedown="addSize()" onclick="addSize()">Aumentar</button>
+			<button onmousedown="rmSize()" onclick="rmSize()">Diminuir</button>
+
+			<button onmousedown="borderSizeAdd()" onclick="borderSizeAdd()">Borda +</button>
+			<button onmousedown="borderSizeRm()" onclick="borderSizeRm()">Borda -</button>
+
+			<div>
+				<input type="color" value="#add8e6" id="bordaCor" list="colors">
+				<input type="color" value="#0000ff" id="bgCor" list="colors">
+			</div>
+
+				<select id="format">
+						<option>Quadrado</option>
+						<option>Losango</option>
+						<option>Circulo</option>
+				</select>
+			<button onclick="formS();bgCor();borderColor()" id="confirm">Confirmar</button>
+			<button onclick="reset()" id="reset">Resetar</button>
+			</div>
+
+					<!-- Opções de cores -->
+				<datalist id="colors">
+				    <option value="#137FB7">
+				    <option value="#4DE3EC">
+				    <option value="#6020A9">
+				    <option value="#DA923C">
+				    <option value="#D73C3C">
+				</datalist>
+
+			<script>
+				div = document.getElementById("box")
+				altura = 300
+				largura = 300
+				borda = 4
+				bordaCor = document.getElementById("bordaCor").value
+
+				function addSize(){
+					altura += + 12
+					largura += + 12
+					div.style.height = altura + "px"
+					div.style.width = largura + "px"
+					console.log(`altura = '${altura}' e largura = '${largura}'`)
+				}
+
+				function rmSize(){
+					if ((altura<0)&&(largura<0)) {
+						altura = 0
+						largura = 0
+					}else{
+						altura += - 12
+						largura += - 12
+					}
+						div.style.height = altura + "px"
+						div.style.width = largura + "px"
+						console.log(`altura = '${altura}' e largura = '${largura}'`)
+				}
+
+				function formS(){
+
+					boxFormat = document.getElementById("format").value
+
+					if (boxFormat == "Circulo") {
+						document.getElementById("box").style.borderRadius = "50%"
+					}
+
+					if (boxFormat == "Quadrado") {
+						document.getElementById("box").style.borderRadius = "12px"
+						document.getElementById("box").style.transform = "translate(-50%,-50%) rotate(0deg)"		
+					}
+
+					if(boxFormat == "Losango"){
+						document.getElementById("box").style.borderRadius = "6px"
+						document.getElementById("box").style.transform = "translate(-50%,-50%) rotate(45deg)"	
+					}
+
+				}
+
+				function bgCor(){
+					backCor = document.getElementById("bgCor").value
+					document.getElementById("box").style.background = backCor
+				}
+				
+				function borderSizeAdd(){
+					div.style.border = borda + "px solid " + bordaCor
+					borda += 4
+				}
+
+				function borderSizeRm(){
+					if (borda<0) {
+						borda = 0
+					}else{
+						borda -= 4
+					}
+
+					div.style.border = borda + "px solid " + bordaCor
+				}
+
+				function borderColor(){
+					bordaCor = document.getElementById("bordaCor").value
+					div.style.border = borda + "px solid " + bordaCor
+				}
+	
+				function reset(){
+					div.style.backgroundColor = "blue"
+					div.style.border = "4px solid lightblue"
+					div.style.transform = "translate(-50%,-50%) rotate(0deg)"
+					div.style.height = "300px"
+					div.style.width = "300px"
+					div.style.borderRadius = "12px"
+				}
+
+			</script>
+
+		</body>
+		
+	</html>
+			

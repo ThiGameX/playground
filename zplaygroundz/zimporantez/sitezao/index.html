@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template animado lindo</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Fugaz+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<nav>
+		<img src="imgs/logoazul.png" class="logo">
+		<ul class="nav-list">
+			<li><a href="#" id="link-home" onclick="linkHome()">Home</a></li>
+			<li><a href="#" id="link-empresa" onclick="linkEmpresa()">Empresa</a></li>
+			<li><a href="#" id="link-a" onclick="linkA()">BrunoGay</a></li>
+		</ul>
+	</nav>
+	<div class="nav-shadow-effect"></div>
+
+	<section id="transition1">
+		<h1 class="t-child">Main title</h1>
+			<p class="t-child">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna nisi aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris ut aliquip ex ea commodo
+			consequat.</p>
+	</section>
+	<div class="t-shadow-effect"></div>
+
+	<section id="transition2">
+		<h1 class="t-child">Titulo Dirso</h1>
+			<p class="t-child">Imagine aqui um texto muito legal com varias informaçoes que visam ser o mais uteis possiveis para a informação de todos que a leêm, pois isto é um texto que contem muita informacao importante que deve ser relata para ser compreendida e compartilhada com as outras pessoas que se interessam ou nao pelo assunto tratado, que venhamos e convenhamos, é algo bem complexo e dificil de entender, porque bananas e é assim que acontecem as coisas atualmente. Imagine aqui um texto muito legal com varias informaçoes que visam ser o mais uteis possiveis para a informação de todos que a leêm, pois isto é um texto que contem muita informacao importante que deve ser relata para ser compreendida e compartilhada com as outras pessoas que se interessam ou nao pelo assunto tratado, que venhamos e convenhamos, é algo bem complexo e dificil de entender, porque bananas e é assim que acontecem as coisas atualmente.</p>
+	</section>
+
+	<section id="transition3">
+		<h1 class="t-child">Titulo Kiluko</h1>
+			<p class="t-child">Ae bombom vem aqui bater na mesa vem bombom *risos*. Ai ai Mas eae bombó te vi la na avenida brasil tava tomando só os querosene em *risos*, voce é louco em bombó, vem aqui bater na mesa vem bombo. Ae bombom vem aqui bater na mesa vem bombom. Ai ai Mas eae bombó te vi la na avenida brasil tava tomando só os querosene em *risos*, voce é louco em bombó, vem aqui bater na mesa vem bombo. Ae bombom vem aqui bater na mesa vem bombom. Ai ai Mas eae bombó te vi la na avenida brasil tava tomando só os querosene em, voce é louco em bombó, vem aqui bater na mesa vem bombo. Ae bombom vem aqui bater na mesa vem bombom. Ai ai Mas eae bombó te vi la na avenida brasil tava tomando só os querosene em, voce é louco em bombó, vem aqui bater na mesa vem bombo. Ae bombom vem aqui bater na mesa vem bombom. Ai ai Mas eae bombó te vi la na avenida brasil tava tomando só os querosene em, voce é louco em bombó, vem aqui bater na mesa vem bombo.</p>
+	</section>
+
+	<script>
+
+				//Nav var
+			nav = document.getElementsByTagName("nav")[0]
+			navShadow = document.getElementsByClassName("nav-shadow-effect")[0]
+			nav.style.top = navShadow.style.top = "-100vh"
+
+				//Nav lista
+			navList = document.getElementsByClassName("nav-list")[0]
+			navList.style.left = "-40vw"
+
+				//Nav Links
+			homeLink = document.getElementById("link-home")
+			empresaLink = document.getElementById("link-empresa")
+			aLink = document.getElementById("link-a")
+			homeLink.style.color = "#242424"
+			homeLink.style.textShadow = "0 0 0px transparent"
+			homeLink.style.pointerEvents = "none"
+
+				//Logo
+			logo = document.getElementsByClassName("logo")[0]
+			//logo.style.transform = "scale(0)"
+			logo.style.opacity = 0
+
+				//Section
+			sec = document.getElementById("transition1")
+			sec2 = document.getElementById("transition2")
+			sec3 = document.getElementById("transition3")
+			secShadow = document.getElementsByClassName("t-shadow-effect")[0]
+			sec.style.left = secShadow.style.left = sec2.style.left = sec3.style.left = "150vw"
+			sec.style.height = sec.style.width = sec2.style.width = sec2.style.height = sec3.style.height = sec3.style.width = secShadow.style.width = secShadow.style.height = "24px"
+
+				//Section titulo e paragrafo
+			secChilds = [document.getElementsByClassName("t-child")[0],document.getElementsByClassName("t-child")[1],document.getElementsByClassName("t-child")[2],document.getElementsByClassName("t-child")[3],document.getElementsByClassName("t-child")[4],document.getElementsByClassName("t-child")[5]]
+			secChilds[0].style.opacity = "0"
+			secChilds[1].style.opacity = "0"
+
+
+			pageAtual = "home"
+
+		window.onload = function (){
+				//Efeito Section 
+			setTimeout(function(){
+				sec.style.left = secShadow.style.left = "60%"
+			},300)
+			setTimeout(function(){
+				sec.style.height = "80vh"
+				secShadow.style.height = "81vh"
+			},700)
+			setTimeout(function (){
+				sec.style.width = "70vw"
+				secShadow.style.width = "70.4vw"
+			},1100)
+			setTimeout(function(){
+				secChilds[0].style.opacity = "1"
+				secChilds[1].style.opacity = "1"
+			},1600)
+			
+			//--------------------------
+
+				//Efeito Nav
+			setTimeout(function (){
+				nav.style.top = navShadow.style.top = "0"
+			},300)
+				//Links
+			setTimeout(function (){
+				navList.style.left = "50%"
+			},1100)
+				//Logo
+			setTimeout(function (){
+				//logo.style.transform = "scale(0.9)"
+				logo.style.opacity = 1
+			},1550)
+		}
+
+
+
+		function linkEmpresa(){
+
+			if (pageAtual != "empresa") {
+				secShadow.style.width = secShadow.style.height = "24px"
+				secChilds[2].style.opacity = "0"
+				secChilds[3].style.opacity = "0"
+			}
+			aLink.style.pointerEvents = "none"
+			homeLink.style.pointerEvents = "none"
+			empresaLink.style.pointerEvents = "none"
+
+			empresaLink.style.color = "#242424"
+			empresaLink.style.textShadow = "0 0 0px transparent"
+			homeLink.style.color = "rgba(12,100,150,.8)"
+			homeLink.style.textShadow = "0 0 6px rgba(52,100,150,.8)"
+			aLink.style.color = "rgba(12,100,150,.8)"
+			aLink.style.textShadow = "0 0 6px rgba(52,100,150,.8)"
+			
+				//Efeito Section 
+
+				setTimeout(function(){
+					sec.style.left = secShadow.style.left = sec3.style.left = "150vw"
+				},300)
+				setTimeout(function(){
+					sec2.style.left = "60%"
+				},450)
+				setTimeout(function(){
+					sec2.style.height = "80vh"
+					secShadow.style.height = "81vh"
+				},900)
+				setTimeout(function (){
+					sec2.style.width = "70vw"
+					secShadow.style.width = "70.4vw"
+				},1400)
+				setTimeout(function(){
+					if (secChilds[2].style.opacity == "0" || secChilds[3].style.opacity == "0") {
+					secChilds[2].style.opacity = "1"
+					secChilds[3].style.opacity = "1"
+					sec3.style.width = sec3.style.height = "24px"
+					}
+					aLink.style.pointerEvents = ""
+					homeLink.style.pointerEvents = ""
+				},1800)
+			
+			pageAtual = "empresa"
+		}
+
+		function linkHome(){
+			if (pageAtual != "home") {
+				sec.style.height = sec.style.width = secShadow.style.width = secShadow.style.height = "24px"
+				secChilds[0].style.opacity = "0"
+				secChilds[1].style.opacity = "0"
+			}
+
+			aLink.style.pointerEvents = "none"
+			homeLink.style.pointerEvents = "none"
+			empresaLink.style.pointerEvents = "none"
+
+			empresaLink.style.color = "rgba(12,100,150,.8)"
+			empresaLink.style.textShadow = "0 0 6px rgba(52,100,150,.8)"
+			homeLink.style.color = "#242424"
+			homeLink.style.textShadow = "0 0 0px transparent"
+			aLink.style.color = "rgba(12,100,150,.8)"
+			aLink.style.textShadow = "0 0 6px rgba(52,100,150,.8)"
+
+
+				//Efeito Section 
+				setTimeout(function(){
+					sec2.style.left = "150vw"
+					sec3.style.left = "150vw"
+				},300)
+				setTimeout(function(){
+					sec.style.left = "60%"
+				},450)
+				setTimeout(function(){
+					sec.style.height = "80vh"
+					secShadow.style.height = "81vh"
+				},900)
+				setTimeout(function (){
+					sec.style.width = "70vw"
+					secShadow.style.width = "70.4vw"
+				},1400)
+				setTimeout(function(){
+					if (secChilds[0].style.opacity == "0" || secChilds[1].style.opacity == "0") {
+					secChilds[0].style.opacity = "1"
+					secChilds[1].style.opacity = "1"
+					}
+					sec2.style.width = sec2.style.height = sec3.style.width = sec3.style.height = "24px"
+					aLink.style.pointerEvents = ""
+					empresaLink.style.pointerEvents = ""
+				},1800)
+			
+			pageAtual = "home"
+		}
+
+		function linkA(){
+			if (pageAtual != "a") {
+				secShadow.style.width = secShadow.style.height = "24px"		
+				secChilds[4].style.opacity = "0"
+				secChilds[5].style.opacity = "0"
+			}
+				
+			aLink.style.pointerEvents = "none"
+			homeLink.style.pointerEvents = "none"
+			empresaLink.style.pointerEvents = "none"
+
+			empresaLink.style.color = "rgba(12,100,150,.8)"
+			empresaLink.style.textShadow = "0 0 6px rgba(52,100,150,.8)"
+			homeLink.style.color = "rgba(12,100,150,.8)"
+			homeLink.style.textShadow = "0 0 6px rgba(52,100,150,.8)"
+			aLink.style.color = "#242424"
+			aLink.style.textShadow = "0 0 0px transparent"
+
+				//Efeito Section 
+				setTimeout(function(){
+					sec.style.left = "150vw"
+					sec2.style.left = "150vw"
+					secShadow.style.left = "150vw"
+				},300)
+				setTimeout(function(){
+					sec3.style.left = "60%"
+				},450)
+				setTimeout(function(){
+					sec3.style.height = "80vh"
+				},900)
+				setTimeout(function (){
+					sec3.style.width = "70vw"
+				},1400)
+				setTimeout(function(){
+					if (secChilds[4].style.opacity == "0" || secChilds[5].style.opacity == "0") {
+					secChilds[4].style.opacity = "1"
+					secChilds[5].style.opacity = "1"
+					}
+					sec2.style.width = sec2.style.height = sec.style.width = sec.style.height = "24px"
+					homeLink.style.pointerEvents = ""
+					empresaLink.style.pointerEvents = ""
+				},1800)
+			
+			pageAtual = "a"
+		}
+
+		
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+	<html>
+
+		<head>
+
+			<title>Relógio Zika</title>
+
+			<link rel="stylesheet" type="text/css" href="style.css">
+
+			<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+		</head>
+
+		<body>
+			
+			<div id="c">
+
+					<!-- ponteiros -->
+				<div id="sec-line"></div>
+				<div id="min-line"></div>
+				<div id="hour-line"></div>
+
+					<!-- números -->
+				<div class="number num1">12</div>
+				<div class="number num2">1</div>
+				<div class="number num3">2</div>
+				<div class="number num4">3</div>
+				<div class="number num5">4</div>
+				<div class="number num6">5</div>
+				<div class="number num7">6</div>
+				<div class="number num8">7</div>
+				<div class="number num9">8</div>
+				<div class="number num10">9</div>
+				<div class="number num11">10</div>
+				<div class="number num12">11</div>
+
+
+			</div>
+
+			<script type="text/javascript">
+				
+					window.onload = function(){
+
+							//Elementos dos ponteiros
+						const secLine = document.getElementById("sec-line")
+						const minLine = document.getElementById("min-line")
+						const hourLine = document.getElementById("hour-line")
+
+							//Define o horario atual
+						var sec = (new Date).getSeconds()
+						var min = (new Date).getMinutes()
+						var hour = (new Date).getHours()
+
+							//Função de rotação dos ponteiros
+						function rotateSec(){secLine.style.transform = "translateX(-50%) rotate("+ sec*6 +"deg)"}
+						function rotateMin(){minLine.style.transform = "translateX(-50%) rotate("+ min*6 +"deg)"}
+						function rotateHour(){hourLine.style.transform = "translateX(-50%) rotate("+ hour*30 +"deg)"}
+						rotateSec()
+						rotateMin()
+						rotateHour()
+
+							//Rotaciona os ponteiros a cada segundo
+						setInterval(function(){
+							sec = (new Date).getSeconds()
+							min = (new Date).getMinutes()
+							hour = (new Date).getHours()
+
+							rotateSec()
+							rotateMin()
+							rotateHour()
+						},1000)
+
+					}
+		
+			</script>
+
+		</body>
+
+	</html>

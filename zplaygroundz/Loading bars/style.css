@@ -1,0 +1,141 @@
+html{
+	margin: 0;
+	padding: 0;
+	background-image: linear-gradient(to right, red, orange)
+}
+
+.tudo .box{
+	width: 95px;
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	overflow: hidden;
+	box-shadow: inset 0 0 0 0 23px rgba(0,0,0,.2);
+	transform: scale(3);
+}
+
+.tudo .box div:nth-child(1){
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 0;
+	width: 10px;
+	height: 80px;
+	animation: anim 1.2s linear infinite;
+	animation-delay: .1s;
+}
+
+.tudo .box div:nth-child(2){
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 12px;
+	width:10px;
+	height: 80px;
+	animation: anim 1.2s linear infinite;
+	animation-delay: .2s;
+}
+
+.tudo .box div:nth-child(3){
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 24px;
+	width:10px;
+	height: 80px;
+	animation: anim 1.2s linear infinite;
+	animation-delay: .3s;
+}
+
+.tudo .box div:nth-child(4){
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 36px;
+	width:10px;
+	height: 80px;
+	animation: anim 1.2s linear infinite;
+	animation-delay: .4s;
+}
+
+.tudo .box div:nth-child(5){
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 48px;
+	width:10px;
+	height: 80px;
+	animation: anim 1.2s linear infinite;
+	animation-delay: .5s;
+}
+
+.tudo .box div:nth-child(6){
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 60px;
+	width:10px;
+	height: 80px;
+	animation: anim 1.2s linear infinite;
+	animation-delay: .6s;
+}
+
+.tudo .box div:nth-child(7){
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 72px;
+	width:10px;
+	height: 80px;
+	animation: anim 1.2s linear infinite;
+	animation-delay: .7s;
+}
+
+.tudo .box div:nth-child(8){
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 84px;
+	width:10px;
+	height: 80px;
+	animation: anim 1.2s linear infinite;
+	animation-delay: .8s;
+}
+
+@keyframes anim{
+
+	0%{
+		margin-top: 70px;
+		background-color: rgba(0,40,100,.9);
+		opacity: .2;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	60%{
+		margin-top: 0px;
+		background-color: rgba(0,40,100,.9);
+		opacity: .9;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	70%{
+		margin-top: 0px;
+		background-color: rgba(0,40,100,.9);
+		opacity: .9;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	100%{
+		margin-top: 70px;
+		background-color: rgba(0,40,100,.9);
+		opacity: .2;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+}

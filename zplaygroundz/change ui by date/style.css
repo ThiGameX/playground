@@ -1,0 +1,50 @@
+::selection{
+    color: #050505;
+    background-color: rgba(255,255,255,.4);
+    text-shadow: 0 0 2px black;
+}
+
+body{
+    color: rgba(10,20,30,.4);
+    text-shadow: 0 0 2px;
+    font: normal 14pt arial;
+    margin: 0%;
+    padding: 0%;
+	background-size: 100% 100%;
+	width: 100vw;
+	height: 100vh;
+}
+
+.box{
+    width: 450px;
+    height: 400px;
+    background-color: rgba(0,0,0, 0.363);
+    border-radius: 30px;
+    border: 7px rgba(0, 0, 0, 0.37) solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}    
+
+h1{
+	margin: 15px;
+}
+
+h2{
+	margin: 0;
+	padding: 0;
+}
+
+#img{
+	position: absolute;
+	top: 63%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 270px;
+	border-radius: 30px;
+	background-size: 100% 100%;
+}
+

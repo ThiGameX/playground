@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desktop</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap" rel="stylesheet">
+	<meta name="viewport" user-scalable="no">
+</head>
+<body>
+
+	<div id="register">
+		
+		<h1>Cadastro</h1>
+
+		<input maxlength="20" minlength="6" type="text" class="common" id="userregist">
+		<input maxlength="20" minlength="6" type="password" class="common" id="passregist">
+
+		<button type="submit" class="common" id="submit" onclick="registerComplete()">Enviar</button>
+
+	</div>		
+
+
+	<div id="login">
+		
+		<h1>Login</h1>
+
+		<input maxlength="20" minlength="6" type="text" class="common" id="user">
+		<input maxlength="20" minlength="6" type="password" class="common" id="pass">
+
+		<button type="submit" class="common" id="submit" onclick="loginComplete()">Enviar</button>
+
+	</div> 
+
+	<div id="tela">
+
+		<nav>
+			<ul>
+				<li><a onclick="navMain('1')">Home</a></li>
+				<li><a onclick="navMain('2')">Empresa</a></li>
+				<li><a onclick="navMain('3')">Estoque</a></li>
+			</ul>
+			<div id="botLine"></div>
+			<img src="imgs/close.png" id="winButtons">
+		</nav>
+
+		<div id="sections">
+			<div id="sect1">
+				<h1>Onde nos encontrar?</h1>
+				<a target="blank" href="https://www.google.com.br/maps/@-23.5548405,-46.7922853,15z"><img src="imgs/map.png"></a>
+			</div>
+			<div id="sect2">
+				<h1>Sobre nós</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			<div id="sect3">
+
+				<div class="cats-nav">
+					<ul>
+						<li onclick="cat('1')">Materiais</li>
+						<li onclick="cat('2')">Ferramentas</li>
+						<li onclick="cat('3')">Diversos</li>
+					</ul>
+				</div>
+
+				<div id="categorias">
+					<div class="cat1">
+						<img class="prod1 produtos-img" src="imgs/materiais/madeira.png">
+							<h3 class="prod1-precos precos">Em estoque <br> <span>Madeiras</span></h3>
+						<img class="prod2 produtos-img" src="imgs/materiais/telha.png">
+							<h3 class="prod2-precos precos">Em estoque <br> <span>Telhas</span></h3>
+						<img class="prod3 produtos-img" src="imgs/materiais/pisos.png">
+							<h3 class="prod3-precos precos">Em estoque <br> <span>Pisos</span></h3>
+						<img class="prod4 produtos-img" src="imgs/materiais/tijolo.png">
+							<h3 class="prod4-precos precos">Em estoque <br> <span>Tijolos</span></h3>
+						<img class="prod5 produtos-img" src="imgs/materiais/laje.png">
+							<h3 class="prod5-precos precos">Em estoque <br> <span>Lajes</span></h3>
+						<img class="prod6 produtos-img" src="imgs/materiais/vidro.png">
+							<h3 class="prod6-precos precos">Em estoque <br> <span>Vidros</span></h3>
+					</div>
+
+					<div class="cat2">
+						<img class="prod1 produtos-img" src="imgs/ferramentas/furadeira.png">
+							<h3 class="prod1-precos precos">Em estoque <br> <span id="amarelo">Furadeiras</span></h3>
+						<img class="prod2 produtos-img" src="imgs/ferramentas/compressor.png">
+							<h3 class="prod2-precos precos" id="bugado">Em estoque <br> <span id="amarelo">Compressores</span></h3>
+						<img class="prod3 produtos-img" src="imgs/ferramentas/macaco.png">
+							<h3 class="prod3-precos precos">Em estoque <br> <span id="amarelo">Macacos</span></h3>
+						<img class="prod4 produtos-img" src="imgs/ferramentas/chaves.png">
+							<h3 class="prod4-precos precos">Em estoque <br> <span id="amarelo">Chaves</span></h3>
+						<img class="prod5 produtos-img" src="imgs/ferramentas/alicates.png">
+							<h3 class="prod5-precos precos">Em estoque <br> <span id="amarelo">Alicates</span></h3>
+						<img class="prod6 produtos-img" src="imgs/ferramentas/martilo.png">
+							<h3 class="prod6-precos precos">Em estoque <br> <span id="amarelo">Martillos</span></h3>
+					</div>
+
+					<div class="cat3">
+						<img class="prod1 produtos-img" src="imgs/etc/lixas.png">
+							<h3 class="prod1-precos precos">Em estoque <br> <span id="vermelho">Lixas</span></h3>
+						<img class="prod2 produtos-img" src="imgs/etc/lampadas.png">
+							<h3 class="prod2-precos precos">Em estoque <br> <span id="vermelho">Lampadas</span></h3>
+						<img class="prod3 produtos-img" src="imgs/etc/cabos.png">
+							<h3 class="prod3-precos precos">Em estoque <br> <span id="vermelho">Cabos</span></h3>
+						<img class="prod4 produtos-img" src="imgs/etc/fitas.png">
+							<h3 class="prod4-precos precos">Em estoque <br> <span id="vermelho">Fitas</span></h3>
+						<img class="prod5 produtos-img" src="imgs/etc/torneiras.png">
+							<h3 class="prod5-precos precos">Em estoque <br> <span id="vermelho">Torneiras</span></h3>
+						<img class="prod6 produtos-img" src="imgs/etc/portas.png">
+							<h3 class="prod6-precos precos">Em estoque <br> <span id="vermelho">Portas</span></h3>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div> 
+
+	<script type="text/javascript">
+		
+		const sections = document.getElementById("sections")
+
+		function navMain(id){
+			if (id == "1") {
+				sections.style.left = "150%"
+				bottomLine.style.left = "22%"
+			}
+			if (id == "2") {
+				sections.style.left = "50%"
+				bottomLine.style.left = "47.9%"
+			}
+			if (id == "3") {
+				sections.style.left = "-50%"
+				bottomLine.style.left = "75%"
+			}
+		}
+
+		const registerDiv = document.getElementById("register")
+		const loginDiv = document.getElementById("login")
+		const telaDiv = document.getElementById("tela")
+		const bottomLine = document.getElementById("botLine")
+
+		var registUser = document.getElementById("userregist")
+		var registPass = document.getElementById("passregist")
+
+		var loginUser = document.getElementById("user")
+		var loginPass = document.getElementById("pass")
+
+		var usuarioRegist, senhaRegist, usuarioLogin, senhaLogin;
+
+		function registerComplete(){
+
+			usuarioRegist = registUser.value
+			senhaRegist = registPass.value
+
+			if(usuarioRegist !== "" && senhaRegist !== ""){
+				registerDiv.style.pointerEvents = "none"
+				registerDiv.style.width = "12px"
+				registerDiv.style.height = "12px"
+				registerDiv.style.opacity = "0"
+
+				setTimeout(function(){
+					loginDiv.style.opacity = "1"
+					loginDiv.style.pointerEvents = "all"
+					loginDiv.style.width = "26vw"
+					loginDiv.style.height = "50vh"
+				},400)
+
+			}else{
+				alert("Preencha os dados corretamente!")
+			}
+
+		}
+
+		function loginComplete(){
+
+			usuarioLogin = loginUser.value
+			senhaLogin = loginPass.value
+
+			if((usuarioLogin == usuarioRegist) && (senhaLogin == senhaRegist)){
+				loginDiv.style.opacity = "0"
+				loginDiv.style.pointerEvents = "none"
+				loginDiv.style.width = "12px"
+				loginDiv.style.height = "12px"
+
+				setTimeout(function(){
+					telaDiv.style.opacity = "1"
+					telaDiv.style.pointerEvents = "all"
+					telaDiv.style.width = "46vw"
+					telaDiv.style.height = "70vh"
+				},400)
+
+			}else{
+				alert("Usuário ou senha incorretos!")
+			}
+		}
+
+
+		var categorias = document.getElementById("categorias")
+
+		function cat(prod){
+			if (prod == "1") {
+				categorias.style.left = "150%"
+			}
+			if (prod == "2") {
+				categorias.style.left = "50%"
+			}
+			if (prod == "3") {
+				categorias.style.left = "-50%"
+			}
+		}
+
+
+	</script>
+
+
+</body>
+</html>

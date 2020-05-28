@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Completacao de CEP</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<form>
+		
+		<label>Cep</label>    <input autocomplete="off" spellcheck="false" type="text" id="cep" maxlength="8"> <br>
+		<label>Rua</label>    <input autocomplete="off" spellcheck="false" type="text" id="rua">    <br>
+		<label>Bairro</label> <input autocomplete="off" spellcheck="false" type="text" id="bairro"> <br>
+		<label>Cidade</label> <input autocomplete="off" spellcheck="false" type="text" id="cidade"> <br>
+		<label>Estado</label> <input autocomplete="off" spellcheck="false" type="text" id="estado"> <br>
+		
+	</form>
+
+	<script type="text/javascript">
+		
+		const cepInput = document.querySelector("#cep")
+		const rua = document.querySelector("#rua")
+		const bairro = document.querySelector("#bairro")
+		const cidade = document.querySelector("#cidade")
+		const estado = document.querySelector("#estado")
+		const form = document.querySelector("form")
+
+		cepInput.onchange = function(event){
+			event.preventDefault()
+
+			let cep = cepInput.value
+			cep = cep.replace(/\D/g, '')
+
+			cepIsNull = (cep == "")
+			?true
+			:false
+
+			let url = "https://viacep.com.br/ws/"+ cep +"/json/"
+
+
+			if(!cepIsNull){
+
+				if(cep.length == 8){
+
+					fetch(url)
+					.then(function(response){
+						console.log(response)
+						if(response.ok == true){
+							return response.json()
+						}else{
+							var error = {erro: true}
+							return error;
+						}
+					})
+					.then(function(json){
+						if(json.erro == true){
+							alert("CEP inválido!")
+						}else{
+							rua.value = json.logradouro
+							bairro.value = json.bairro
+							cidade.value = json.localidade
+							estado.value = json.uf
+						}
+					})
+
+				}else{alert("Cep invalido")}
+				
+			}else{alert("Cep invalido")}
+
+		}
+
+
+	</script>
+
+</body>
+</html>
